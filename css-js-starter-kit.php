@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       CSS & JS Starter Kit
  * Plugin URI:        adesignr.com
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       PLugin um nützliche CSS & JS Snippets einzubinden.
  * Version:           1.0.0
  * Author:            Alex
  * Author URI:        adesignr.com

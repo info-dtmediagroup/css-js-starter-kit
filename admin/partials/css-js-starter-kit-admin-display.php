@@ -60,7 +60,7 @@
         <fieldset>
             <legend class="screen-reader-text"><span><?php _e('Add Animate.css', $this->plugin_name);?></span></legend>
             <label for="<?php echo $this->plugin_name; ?>-animate_css">
-                <input type="checkbox" id="<?php echo $this->plugin_name; ?>-animate_css" name="<?php echo $this->plugin_name; ?> [animate_css]" value="1" <?php checked($animate_css, 1); ?>/>
+                <input type="checkbox" id="<?php echo $this->plugin_name; ?>-animate_css" name="<?php echo $this->plugin_name; ?>[animate_css]" value="1" <?php checked($animate_css, 1); ?>/>
                 <span><?php esc_attr_e('Add Animate.css to Head', $this->plugin_name); ?></span>
             </label>
         </fieldset>
@@ -84,7 +84,7 @@
         <fieldset>
             <legend class="screen-reader-text"><span><?php _e('Add wow.js', $this->plugin_name);?></span></legend>
             <label for="<?php echo $this->plugin_name; ?>-wow_js">
-                <input type="checkbox" id="<?php echo $this->plugin_name; ?>-wow_js" name="<?php echo $this->plugin_name; ?>[wow_js]" value="1"/>
+                <input type="checkbox" id="<?php echo $this->plugin_name; ?>-wow_js" name="<?php echo $this->plugin_name; ?>[wow_js]" value="1" <?php checked($wow_js, 1); ?>/>
                 <span><?php esc_attr_e('Add Wow.js to Footer', $this->plugin_name); ?></span>
             </label>
         </fieldset>

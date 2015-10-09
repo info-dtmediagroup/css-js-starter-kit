@@ -41,10 +41,12 @@
 			$wow_js = $options['wow_js'];
 			$jquery_cdn = $options['jquery_cdn'];
 			$cdn_provider = $options['cdn_provider'];
+			$remove_emoji = $options['remove_emoji'];
 			
 			//Miscellaneous
 			$cleanup = $options['cleanup'];
 			$css_js_versions = $options['css_js_versions'];
+			
 			
 			
 

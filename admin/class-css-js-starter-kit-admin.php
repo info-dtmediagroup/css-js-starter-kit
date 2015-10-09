@@ -124,5 +124,24 @@ class Css_Js_Starter_Kit_Admin {
 	public function display_plugin_setup_page() {
 		include_once( 'partials/css-js-starter-kit-admin-display.php' );
 	}
+	
+	public function options_update() {
+		register_setting($this->plugin_name, $this->plugin_name, array($this, 'validate'));
+	}
+	
+	public function validate($input) {
+		// All checkboxes inputs        
+		$valid = array();
+
+		//CSS_JS Starter Kit
+		$valid['cleanup'] = (isset($input['cleanup']) && !empty($input['cleanup'])) ? 1 : 0;
+		$valid['animate_css'] = (isset($input['animate_css']) && !empty($input['animate_css'])) ? 1: 0;
+		$valid['fawesome_css'] = (isset($input['fawesome_css']) && !empty($input['fawesome_css'])) ? 1 : 0;
+		$valid['wow_js'] = (isset($input['wow_js']) && !empty($input['wow_js'])) ? 1 : 0;
+		$valid['jquery_cdn'] = (isset($input['jquery_cdn']) && !empty($input['jquery_cdn'])) ? 1 : 0;
+		$valid['cdn_provider'] = esc_url($input['cdn_provider']);
+    
+    return $valid;
+	}
 
 }

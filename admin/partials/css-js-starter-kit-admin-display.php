@@ -33,7 +33,6 @@
 			$options = get_option($this->plugin_name);
 
 			// CSS
-			$cleanup = $options['cleanup'];
 			$animate_css = $options['animate_css'];
 			$fawesome_css = $options['fawesome_css'];
 
@@ -42,6 +41,11 @@
 			$wow_js = $options['wow_js'];
 			$jquery_cdn = $options['jquery_cdn'];
 			$cdn_provider = $options['cdn_provider'];
+			
+			//Miscellaneous
+			$cleanup = $options['cleanup'];
+			$css_js_versions = $options['css_js_versions'];
+			
 			
 
 		

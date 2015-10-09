@@ -88,13 +88,21 @@ class Css_Js_Starter_Kit_Admin {
 		// All checkboxes inputs        
 		$valid = array();
 
-		//CSS_JS Starter Kit
-		$valid['cleanup'] = (isset($input['cleanup']) && !empty($input['cleanup'])) ? 1 : 0;
+		//CSS
 		$valid['animate_css'] = (isset($input['animate_css']) && !empty($input['animate_css'])) ? 1: 0;
 		$valid['fawesome_css'] = (isset($input['fawesome_css']) && !empty($input['fawesome_css'])) ? 1 : 0;
+		
+		
+		//JS
 		$valid['wow_js'] = (isset($input['wow_js']) && !empty($input['wow_js'])) ? 1 : 0;
 		$valid['jquery_cdn'] = (isset($input['jquery_cdn']) && !empty($input['jquery_cdn'])) ? 1 : 0;
 		$valid['cdn_provider'] = esc_url($input['cdn_provider']);
+		
+		
+		//Misc
+		$valid['css_js_versions'] = (isset($input['css_js_versions']) && !empty($input['css_js_versions'])) ? 1 : 0;
+		$valid['cleanup'] = (isset($input['cleanup']) && !empty($input['cleanup'])) ? 1 : 0;
+
     
     return $valid;
 	}

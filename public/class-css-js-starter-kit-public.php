@@ -62,36 +62,6 @@ class Css_Js_Starter_Kit_Public {
      *
      * @since    1.0.0
      */
-    // Cleanup head
-    public function css_js_starter_cleanup() {
-
-        if($this->css_js_starter_options['cleanup']){
-
-
-            remove_action( 'wp_head', 'rsd_link' );                 // RSD link
-            remove_action( 'wp_head', 'feed_links_extra', 3 );            // Category feed link
-            remove_action( 'wp_head', 'feed_links', 2 );                // Post and comment feed links
-            remove_action( 'wp_head', 'index_rel_link' );
-            remove_action( 'wp_head', 'wlwmanifest_link' );
-            remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );        // Parent rel link
-            remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );       // Start post rel link
-            remove_action( 'wp_head', 'rel_canonical', 10, 0 );
-            remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 );
-            remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 ); // Adjacent post rel link
-            remove_action( 'wp_head', 'wp_generator' );               // WP Version
-            remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-            remove_action( 'wp_print_styles', 'print_emoji_styles' );
-
-
-        }
-    }   
-    // Cleanup head
-    public function css_js_starter_remove_x_pingback($headers) {
-        if(!empty($this->css_js_starter_options['cleanup'])){
-            unset($headers['X-Pingback']);
-            return $headers;
-        }
-    }
 
     // Add animate.css
     public function css_js_starter_animate_css() {
@@ -134,6 +104,50 @@ class Css_Js_Starter_Kit_Public {
             }
         }
     }
+	
+	    // Cleanup head
+    public function css_js_starter_cleanup() {
+
+        if($this->css_js_starter_options['cleanup']){
+
+
+            remove_action( 'wp_head', 'rsd_link' );                 // RSD link
+            remove_action( 'wp_head', 'feed_links_extra', 3 );            // Category feed link
+            remove_action( 'wp_head', 'feed_links', 2 );                // Post and comment feed links
+            remove_action( 'wp_head', 'index_rel_link' );
+            remove_action( 'wp_head', 'wlwmanifest_link' );
+            remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );        // Parent rel link
+            remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );       // Start post rel link
+            remove_action( 'wp_head', 'rel_canonical', 10, 0 );
+            remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 );
+            remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 ); // Adjacent post rel link
+            remove_action( 'wp_head', 'wp_generator' );               // WP Version
+            remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+            remove_action( 'wp_print_styles', 'print_emoji_styles' );
+
+
+        }
+    }   
+    // Cleanup head
+    public function css_js_starter_remove_x_pingback($headers) {
+        if(!empty($this->css_js_starter_options['cleanup'])){
+            unset($headers['X-Pingback']);
+            return $headers;
+        }
+    }
+	
+	
+	// Remove  CSS and JS query strings versions
+	public function css_js_starter_remove_css_js_ver( ) {
+		if(!empty($this->css_js_starter_options['css_js_versions'])){
+			function css_js_starter_remove_css_js_ver_filter($src ){
+				 if( strpos( $src, '?ver=' ) ) $src = remove_query_arg( 'ver', $src );
+				 return $src;
+			}
+			add_filter( 'style_loader_src', 'css_js_starter_remove_css_js_ver_filter', 10, 2 );
+			add_filter( 'script_loader_src', 'css_js_starter_remove_css_js_ver_filter', 10, 2 );
+		}
+	}
 
 
 

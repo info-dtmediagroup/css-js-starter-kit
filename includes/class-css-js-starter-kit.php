@@ -181,10 +181,12 @@ class Css_Js_Starter_Kit {
 		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'css_js_starter_animate_css');
 		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'css_js_starter_fawesome_css');
 		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'css_js_starter_wow_js');
+		$this->loader->add_action( 'after_setup_theme', $plugin_public, 'css_js_starter_remove_css_js_ver');
+
 
            //Filters
         $this->loader->add_filter('wp_headers', $plugin_public, 'css_js_starter_remove_x_pingback');
-        
+		        
 
 	}
 

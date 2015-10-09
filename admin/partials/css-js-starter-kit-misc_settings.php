@@ -19,7 +19,7 @@
 	<p><?php _e('Check the options you need to enqueue the libraries.', $this->plugin_name);?></p>
 
 	<!-- remove some meta and generators from the <head> -->
-        <fieldset>
+    <fieldset>
         <legend class="screen-reader-text">
             <span><?php _e('Clean WordPress head section', $this->plugin_name);?></span>
         </legend>
@@ -27,6 +27,14 @@
 				<input type="checkbox" id="<?php echo $this->plugin_name; ?>-cleanup" name="<?php echo $this->plugin_name; ?>[cleanup]" value="1" <?php checked($cleanup, 1); ?> />
 				<span><?php esc_attr_e('Clean up the head section', $this->plugin_name); ?></span>
 			</label>
-		</fieldset>
+	</fieldset>
+		
+	<fieldset>
+		<legend class="screen-reader-text"><span><?php _e('Remove CSS and JS files query string versions', $this->plugin_name);?></span></legend>
+		<label for="<?php echo $this->plugin_name;?>-css_js_versions">
+			<input type="checkbox" id="<?php echo $this->plugin_name;?>-css_js_versions" name="<?php echo $this->plugin_name;?>[css_js_versions]" value="1" <?php checked($css_js_versions, 1);?>/>
+			<span><?php esc_attr_e('Remove CSS and JS versions (uncheck for dev)', $this->plugin_name);?></span>
+		</label>
+	</fieldset>
 		
 </div>

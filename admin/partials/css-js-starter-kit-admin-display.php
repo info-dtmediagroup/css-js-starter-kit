@@ -20,12 +20,12 @@
     
     
 
-		<form method="post" name="cleanup_options" action="options.php">
+		<form method="post" name="css_js_starter_options" action="options.php">
 		
 		<h2 class="nav-tab-wrapper">
-            <a href="#css" class="nav-tab nav-tab-active"><?php _e('CSS Snippets', $this->plugin_name);?></a>
-            <a href="#js" class="nav-tab"><?php _e('JS Snippets', $this->plugin_name);?></a>
-            <a href="#misc" class="nav-tab"><?php _e('Miscellaneous', $this->plugin_name);?></a>
+            <a href="#css-settings" class="nav-tab nav-tab-active"><?php _e('CSS Snippets', $this->plugin_name);?></a>
+            <a href="#js-settings" class="nav-tab"><?php _e('JS Snippets', $this->plugin_name);?></a>
+            <a href="#misc-settings" class="nav-tab"><?php _e('Miscellaneous', $this->plugin_name);?></a>
 		</h2>
 
 			<?php

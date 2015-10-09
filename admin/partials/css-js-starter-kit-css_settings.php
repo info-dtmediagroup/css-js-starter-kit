@@ -13,7 +13,7 @@
  */
 ?>
 
-<div id="css" class="wrap">
+<div id="css-settings" class="wrap metabox-holder css-js-starter-metaboxes">
 
 	<h2><?php esc_attr_e( 'CSS Snippets', $this->plugin_name ); ?></h2>
 

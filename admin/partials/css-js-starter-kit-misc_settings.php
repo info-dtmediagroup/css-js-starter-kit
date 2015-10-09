@@ -13,9 +13,9 @@
  */
 ?>
 
-<div id="misc" class="wrap">
+<div id="misc-settings" class="wrap metabox-holder css-js-starter-metaboxes hidden">
 
-	<h2 class="nav-tab-wrapper"><?php _e('Miscellaneous', $this->plugin_name);?></h2>
+	<h2><?php _e('Miscellaneous', $this->plugin_name);?></h2>
 	<p><?php _e('Check the options you need to enqueue the libraries.', $this->plugin_name);?></p>
 
 	<!-- remove some meta and generators from the <head> -->

@@ -13,9 +13,9 @@
  */
 ?>
 
-<div id="js" class="wrap">
+<div id="js-settings" class="wrap metabox-holder css-js-starter-metaboxes hidden">
 
-	<h2 class="nav-tab-wrapper"><?php _e('JS Snippets', $this->plugin_name);?></h2>
+	<h2><?php _e('JS Snippets', $this->plugin_name);?></h2>
 	<p><?php _e('Check the options you need to enqueue the libraries.', $this->plugin_name);?></p>
 
 		<!-- Add Wow.js -->

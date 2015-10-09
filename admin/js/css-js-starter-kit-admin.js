@@ -1,32 +1,56 @@
 (function( $ ) {
 	'use strict';
 
-	/**
-	 * All of the code for your admin-specific JavaScript source
-	 * should reside in this file.
-	 *
-	 * Note that this assume you're going to use jQuery, so it prepares
-	 * the $ function reference to be used within the scope of this
-	 * function.
-	 *
-	 * From here, you're able to define handlers for when the DOM is
-	 * ready:
-	 *
-	 * $(function() {
-	 *
-	 * });
-	 *
-	 * Or when the window is loaded:
-	 *
-	 * $( window ).load(function() {
-	 *
-	 * });
-	 *
-	 * ...and so on.
-	 *
-	 * Remember that ideally, we should not attach any more than a single DOM-ready or window-load handler
-	 * for any particular page. Though other scripts in WordPress core, other plugins, and other themes may
-	 * be doing this, we should try to minimize doing that in our own work.
-	 */
+
+	 $(function() {
+	 	// tabs
+		var $tabBoxes = $('.css-js-starter-metaboxes'),
+		       $tabLinkActive,
+		       $currentTab,
+		       $currentTabLink,
+		       $tabContent,
+		       $hash,
+                       $showChild = $(".show-child-if-checked");
+
+
+
+
+
+		// Tabs on load
+	 	if(window.location.hash){
+	 		$hash = window.location.hash;
+	 		$tabBoxes.addClass('hidden');
+			$currentTab = $($hash).toggleClass('hidden');
+			$('.nav-tab').removeClass('nav-tab-active');
+			$('.nav-tab[href='+$hash+']').addClass('nav-tab-active');
+	 	}
+	 	//Tabs on click
+	 	$('.nav-tab-wrapper').on('click', 'a', function(e){
+			e.preventDefault();
+			$tabContent = $(this).attr('href');
+			$('.nav-tab').removeClass('nav-tab-active');
+			$tabBoxes.addClass('hidden');
+			$currentTab = $($tabContent).toggleClass('hidden');
+			$(this).addClass('nav-tab-active');
+			 if(history.pushState) {
+				history.pushState(null, null, $tabContent);
+			}
+			else {
+				location.hash = $tabContent;
+			}
+		})
+
+	 	// Fields showing after parent is checked
+		$showChild.on('change', function() {
+		    if(this.checked) {
+			$(this).parent().next('fieldset').removeClass('hidden');
+		    }else{
+			$(this).parent().next('fieldset').addClass('hidden');
+		    }
+		});
+
+                
+
+	});
 
 })( jQuery );

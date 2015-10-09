@@ -98,5 +98,30 @@ class Css_Js_Starter_Kit_Admin {
     
     return $valid;
 	}
+	
+	   /**
+     * Register the JavaScript for the admin area.
+     *
+     * @since    1.0.0
+     */
+    public function enqueue_scripts() {
+
+        /**
+         * This function is provided for demonstration purposes only.
+         *
+         * An instance of this class should be passed to the run() function
+         * defined in Wp_Cbf_Loader as all of the hooks are defined
+         * in that particular class.
+         *
+         * The Wp_Cbf_Loader will then create the relationship
+         * between the defined hooks and the functions defined in this
+         * class.
+         */
+        if ( 'settings_page_css-js-starter-kit' == get_current_screen() -> id ) {
+            wp_enqueue_media();
+            wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/css-js-starter-kit-admin.js', array( 'jquery' ), $this->version, false );
+        }
+
+    }
 
 }

@@ -98,6 +98,8 @@ class Css_Js_Starter_Kit_Admin {
 		$valid['jquery_cdn'] = (isset($input['jquery_cdn']) && !empty($input['jquery_cdn'])) ? 1 : 0;
 		$valid['cdn_provider'] = esc_url($input['cdn_provider']);
 		$valid['remove_emoji'] = (isset($input['remove_emoji']) && !empty($input['remove_emoji'])) ? 1 : 0;
+		$valid['gsap_js'] = (isset($input['gsap_js']) && !empty($input['gsap_js'])) ? 1 : 0;
+
 
 		
 		

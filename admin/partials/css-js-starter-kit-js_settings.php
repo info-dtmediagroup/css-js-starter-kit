@@ -26,6 +26,15 @@
                 <span><?php esc_attr_e('Add Wow.js to Footer', $this->plugin_name); ?></span>
             </label>
         </fieldset>
+		
+		<!-- Add Greensock -->
+        <fieldset>
+            <legend class="screen-reader-text"><span><?php _e('Add GreenSock Animation Platform', $this->plugin_name);?></span></legend>
+            <label for="<?php echo $this->plugin_name; ?>-gsap_js">
+                <input type="checkbox" id="<?php echo $this->plugin_name; ?>-gsap_js" name="<?php echo $this->plugin_name; ?>[gsap_js]" value="1" <?php checked($gsap_js, 1); ?>/>
+                <span><?php esc_attr_e('Add GreenSock Animation Platform to Footer', $this->plugin_name); ?></span>
+            </label>
+        </fieldset>
 
         
         <!-- load jQuery from CDN -->

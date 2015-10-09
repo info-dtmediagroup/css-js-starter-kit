@@ -42,6 +42,7 @@
 			$jquery_cdn = $options['jquery_cdn'];
 			$cdn_provider = $options['cdn_provider'];
 			$remove_emoji = $options['remove_emoji'];
+			$gsap_js = $options['gsap_js'];
 			
 			//Miscellaneous
 			$cleanup = $options['cleanup'];

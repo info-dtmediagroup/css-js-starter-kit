@@ -128,6 +128,13 @@ class Css_Js_Starter_Kit_Public {
 		}
 	}
 	
+	// Add Greensock
+    public function css_js_starter_gsap_js() {
+        if(!empty($this->css_js_starter_options['gsap_js'])){
+				wp_enqueue_script( 'gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js', array(), null, true);    
+		}
+    }
+	
 	// Cleanup head
     public function css_js_starter_cleanup() {
 

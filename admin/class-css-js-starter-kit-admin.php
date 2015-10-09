@@ -99,5 +99,30 @@ class Css_Js_Starter_Kit_Admin {
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/css-js-starter-kit-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
+	
+	//Add Page & Menu
+	public function add_plugin_admin_menu() {
+		add_options_page(
+			'CSS & JS Starter Kit',
+			'CSS & JS Starter Kit',
+			'manage_options',
+			$this->plugin_name,
+			array($this, 'display_plugin_setup_page')
+		);
+	}
+	
+	
+	//Link to Plugin Settings
+	public function add_action_links( $links ) {
+		$settings_link = array(
+				'<a href="' . admin_url('options-general.php?page=' . $this->plugin_name) . '">' . __('Settings', $this->plugin_name) . '</a>',
+		);
+		return array_merge( $settings_link, $links );
+	}
+	
+	//Render page
+	public function display_plugin_setup_page() {
+		include_once( 'partials/css-js-starter-kit-admin-display.php' );
+	}
 
 }

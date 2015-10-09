@@ -56,54 +56,6 @@ class Css_Js_Starter_Kit_Public {
 
 	}
 
-	/**
-	 * Register the stylesheets for the public-facing side of the site.
-	 *
-	 * @since    1.0.0
-	 */
-	public function enqueue_styles() {
-
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Css_Js_Starter_Kit_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Css_Js_Starter_Kit_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/css-js-starter-kit-public.css', array(), $this->version, 'all' );
-
-	}
-
-	/**
-	 * Register the stylesheets for the public-facing side of the site.
-	 *
-	 * @since    1.0.0
-	 */
-	public function enqueue_scripts() {
-
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Css_Js_Starter_Kit_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Css_Js_Starter_Kit_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/css-js-starter-kit-public.js', array( 'jquery' ), $this->version, false );
-
-	}
-	
-
-
 
     /**
      * Cleanup functions depending on each checkbox returned value in admin
@@ -160,7 +112,7 @@ class Css_Js_Starter_Kit_Public {
     public function css_js_starter_wow_js() {
         if(!empty($this->css_js_starter_options['wow_js'])){
 				wp_enqueue_script( 'wow', 'https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js', array(), null, true);
-				wp_enqueue_script( 'wow-init', plugin_dir_url( __FILE__ ) . 'public/js/wow-init.js', array(), null, true);
+				wp_enqueue_script( 'wow-init', plugin_dir_url( __FILE__ ) . 'js/wow-init.js', array(), null, true);
     
 		}
     }

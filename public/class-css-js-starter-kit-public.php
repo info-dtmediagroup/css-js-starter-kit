@@ -51,6 +51,8 @@ class Css_Js_Starter_Kit_Public {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
+		$this->css_js_starter_options = get_option($this->plugin_name);
+
 
 	}
 
@@ -100,20 +102,6 @@ class Css_Js_Starter_Kit_Public {
 
 	}
 	
-		
-/**
-*
-* public/class-wp-cbf-public.php
-*
-**/
-
-    public function __construct( $plugin_name, $version ) {
-
-        $this->plugin_name = $plugin_name;
-        $this->version = $version;
-        $this->css_js_starter_options = get_option($this->plugin_name);
-
-    }
 
 
 
@@ -156,32 +144,24 @@ class Css_Js_Starter_Kit_Public {
     // Add animate.css
     public function css_js_starter_animate_css() {
         if(!empty($this->css_js_starter_options['animate_css'])){
-            function animatecss() {
-				wp_register_script('animatecss', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css', array(), null );
-			}
-			add_action('wp_enqueue_scripts', 'animatecss');
+				wp_enqueue_style('animatecss', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css', array(), null );
         }
     }
 
     // Add Font Awesome
     public function css_js_starter_fawesome_css() {
-        if(!empty($this->wp_cbf_options['fawesome_css'])){
-			function fawesome() {
-				wp_register_script('fawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', array(), null );
-			}
-			add_action('wp_enqueue_scripts', 'fawesome');        
+        if(!empty($this->css_js_starter_options['fawesome_css'])){
+				wp_enqueue_style('fawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', array(), null );
 		}
     }
 
 
     // Add Wow.js
     public function css_js_starter_wow_js() {
-        if(!empty($this->wp_cbf_options['wow_js'])){
-		function wow() {
-			wp_register_script( 'wow', 'https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js', array(), null, true);
-			wp_register_script( 'wow-init', plugin_dir_url( __FILE__ ) . 'public/js/wow-init.js', array(), null, true);
-		}
-		add_action('wp_enqueue_scripts', 'wow');	    
+        if(!empty($this->css_js_starter_options['wow_js'])){
+				wp_enqueue_script( 'wow', 'https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js', array(), null, true);
+				wp_enqueue_script( 'wow-init', plugin_dir_url( __FILE__ ) . 'public/js/wow-init.js', array(), null, true);
+    
 		}
     }
     

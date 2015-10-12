@@ -5,6 +5,32 @@ html, body {
     overflow-x: hidden;
 }
 
+.mobile_nav_fix li {
+	position: relative;
+	line-height: 1em;
+}
+
+.mobile_nav_fix li ul {
+	text-align: left;
+	z-index: 9999;
+	width: 240px;
+	background: #FFF none repeat scroll 0% 0%;
+	visibility: hidden;
+	opacity: 0;
+	border-top: none;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+	position: absolute;
+	padding: 20px 0px;
+}
+
+.mobile_nav_fix li li {
+	position: relative;
+	line-height: 2em;
+}
+
+.mobile_nav_fix li li a {
+	font-size: 14px;
+}
 /* Mobile Menu */
 
 #main-header #et-top-navigation {
@@ -37,7 +63,7 @@ html, body {
 	display: none;
 }
 
-.nav li ul {
+#top-menu-nav li ul {
 	background: #2a2a2a !important;
 	position: inherit !important;
 	width: auto !important;

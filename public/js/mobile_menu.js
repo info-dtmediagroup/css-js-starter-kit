@@ -13,9 +13,18 @@ jQuery(function() {
         return check;
     }
 	
+	//jQuery('ul#top-menu').removeClass('nav').addClass('mobile_nav_fix');
+
+	
+	jQuery('nav#top-menu-nav').replaceWith(function(){
+    return jQuery('<div id="top-menu-nav" />').append(jQuery(this).contents());
+	});
+	
 	if( mobilecheck() ) {
 		jQuery('.et_menu_container').append('<ul id="navToggle" class="burger slide"><li></li><li></li><li></li></ul>');
 	}
+	
+
 
     var clickevent = mobilecheck() ? 'touchstart' : 'click';
 
@@ -54,6 +63,13 @@ jQuery(function() {
 			jQuery( event.target ).closest('li').siblings().removeClass('show-sub-menu');
 		});	
 	}
+	
+	jQuery('.menu-item-has-children').append('<span class="mobile-dropdown-toggle">3</span>');
+	
+		jQuery('.mobile-dropdown-toggle').on(clickevent, function(event){
+			jQuery( event.target ).closest('li').toggleClass('show-sub-menu');
+			jQuery( event.target ).closest('li').siblings().removeClass('show-sub-menu');
+		});	
 	
 	
     content.click(function() {

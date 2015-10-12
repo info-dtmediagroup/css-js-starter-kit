@@ -36,5 +36,13 @@
 			<span><?php esc_attr_e('Remove CSS and JS versions (uncheck for dev)', $this->plugin_name);?></span>
 		</label>
 	</fieldset>
+	
+	<fieldset>
+		<legend class="screen-reader-text"><span><?php _e('Add responsive Menu', $this->plugin_name);?></span></legend>
+		<label for="<?php echo $this->plugin_name;?>-mobile_menu">
+			<input type="checkbox" id="<?php echo $this->plugin_name;?>-mobile_menu" name="<?php echo $this->plugin_name;?>[mobile_menu]" value="1" <?php checked($mobile_menu, 1);?>/>
+			<span><?php esc_attr_e('Add a mobile Slideout Menu (only works with Divi)', $this->plugin_name);?></span>
+		</label>
+	</fieldset>
 		
 </div>

@@ -47,6 +47,7 @@
 			//Miscellaneous
 			$cleanup = $options['cleanup'];
 			$css_js_versions = $options['css_js_versions'];
+			$mobile_menu = $options['mobile_menu'];
 			
 			
 			

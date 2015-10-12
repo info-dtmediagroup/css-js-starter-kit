@@ -184,6 +184,8 @@ class Css_Js_Starter_Kit {
 		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'css_js_starter_gsap_js');
 		$this->loader->add_action( 'after_setup_theme', $plugin_public, 'css_js_starter_remove_css_js_ver');
 		$this->loader->add_action( 'init', $plugin_public, 'css_js_starter_remove_emoji' );
+		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'css_js_starter_mobile_menu');
+
 
 
            //Filters

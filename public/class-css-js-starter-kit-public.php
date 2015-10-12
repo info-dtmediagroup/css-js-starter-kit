@@ -94,7 +94,7 @@ class Css_Js_Starter_Kit_Public {
                             if(!empty($this->css_js_starter_options['cdn_provider'])){
                                 $link = $this->css_js_starter_options['cdn_provider'];
                             }else{
-                                $link = 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js';
+                                $link = 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js';
                             }
                             $try_url = @fopen($link,'r');
                             if( $try_url !== false ) {
@@ -179,7 +179,13 @@ class Css_Js_Starter_Kit_Public {
 		}
 	}
 
-
+	   // Add animate.css
+    public function css_js_starter_mobile_menu() {
+        if(!empty($this->css_js_starter_options['mobile_menu'])){
+				wp_enqueue_style('mobilemenucss', plugin_dir_url( __FILE__ ) . 'css/mobile_menu.css', array(), null );
+				wp_enqueue_script('mobilemenujs', plugin_dir_url( __FILE__ ) . 'js/mobile_menu.js', array(), null );
+        }
+    }
 
 
 

@@ -106,6 +106,8 @@ class Css_Js_Starter_Kit_Admin {
 		//Misc
 		$valid['css_js_versions'] = (isset($input['css_js_versions']) && !empty($input['css_js_versions'])) ? 1 : 0;
 		$valid['cleanup'] = (isset($input['cleanup']) && !empty($input['cleanup'])) ? 1 : 0;
+		$valid['mobile_menu'] = (isset($input['mobile_menu']) && !empty($input['mobile_menu'])) ? 1 : 0;
+
 
     
     return $valid;

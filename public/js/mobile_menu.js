@@ -13,9 +13,10 @@ jQuery(function() {
         return check;
     }
 	
-	//if( mobilecheck() ) {
+	if( mobilecheck() ) {
 		jQuery('.et_menu_container').append('<ul id="navToggle" class="burger slide"><li></li><li></li><li></li></ul>');
-	//}
+	}
+
     var clickevent = mobilecheck() ? 'touchstart' : 'click';
 
     var items = jQuery('#et-top-navigation');
@@ -45,14 +46,15 @@ jQuery(function() {
         }
     });
 	
-	if( mobilecheck() ) {
-	jQuery('.menu-item-has-children').append('<span class="mobile-dropdown-toggle">3</span>');
+	if( mobilecheck() ) {	
+		jQuery('.menu-item-has-children').append('<span class="mobile-dropdown-toggle">3</span>');
 	
-	jQuery('.mobile-dropdown-toggle').on(clickevent, function(event){
-		jQuery( event.target ).closest('li').toggleClass('show-sub-menu');
-	});
-	
+		jQuery('.mobile-dropdown-toggle').on(clickevent, function(event){
+			jQuery( event.target ).closest('li').toggleClass('show-sub-menu');
+			jQuery( event.target ).closest('li').siblings().removeClass('show-sub-menu');
+		});	
 	}
+	
 	
     content.click(function() {
         if (content.hasClass('open')) {

@@ -164,7 +164,7 @@ class Css_Js_Starter_Kit {
 		
 		//Add Updater
 		
-		$this->loader->add_action( 'init', 'custom_github_updater' );
+		$this->loader->add_action( 'init', $plugin_admin, 'custom_github_updater' );
 
 
 	}

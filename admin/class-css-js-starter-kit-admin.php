@@ -72,7 +72,7 @@ class Css_Js_Starter_Kit_Admin {
 				'sslverify' => true,
 				'requires' => '3.0',
 				'tested' => '3.3',
-				'readme' => 'README.md',
+				'readme' => 'README.txt',
 				'access_token' => '',
 			);
 

@@ -86,7 +86,7 @@ class Css_Js_Starter_Kit_Public {
 	
 	private function css_js_starter_header_background_color(){
          if(isset($this->css_js_starter_options['header_background_color']) && !empty($this->css_js_starter_options['header_background_color']) ){
-             $background_color_css  = ".et_menu_container{ background:".$this->css_js_starter_options['header_background_color'].";}";
+             $background_color_css  = ".logo_container{ background:".$this->css_js_starter_options['header_background_color'].";} #et-top-navigation{ background:".$this->css_js_starter_options['header_background_color'].";}";
              return $background_color_css;
          }
     }

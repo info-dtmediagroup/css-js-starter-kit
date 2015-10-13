@@ -1,5 +1,9 @@
 /* Floating Header */
 	
+#main-header {
+	box-shadow: none !important;
+	top: 40px !important;
+}	
 .et_fixed_nav #main-header.et-fixed-header {
 	top: 40px !important;
 	box-shadow: none !important;

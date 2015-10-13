@@ -57,6 +57,37 @@ register_deactivation_hook( __FILE__, 'deactivate_css_js_starter_kit' );
  */
 require plugin_dir_path( __FILE__ ) . 'includes/class-css-js-starter-kit.php';
 
+
+	/* Plugin Updater */
+	add_action( 'init', 'custom_github_updater' );
+	function custom_github_updater() {
+
+	include_once 'updater.php';
+
+	define( 'WP_GITHUB_FORCE_UPDATE', true );
+
+	if ( is_admin() ) { // note the use of is_admin() to double check that this is happening in the admin
+
+		$config = array(
+			'slug' => plugin_basename( __FILE__ ),
+			'proper_folder_name' => 'css-js-starter-kit',
+			'api_url' => 'https://api.github.com/repos/DTMediaGroup/css-js-starter-kit',
+			'raw_url' => 'https://raw.github.com/DTMediaGroup/css-js-starter-kit/develop',
+			'github_url' => 'https://github.com/DTMediaGroup/css-js-starter-kit/',
+			'zip_url' => 'https://github.com/DTMediaGroup/css-js-starter-kit/archive/develop.zip',
+			'sslverify' => true,
+			'requires' => '3.0',
+			'tested' => '3.3',
+			'readme' => 'README.md',
+			'access_token' => '',
+		);
+
+		new WP_GitHub_Updater( $config );
+
+	}
+
+}
+
 /**
  * Begins execution of the plugin.
  *

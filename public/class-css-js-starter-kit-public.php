@@ -76,6 +76,30 @@ class Css_Js_Starter_Kit_Public {
 				wp_enqueue_style('fawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', array(), null );
 		}
     }
+	
+	// Add Floating Header
+	public function css_js_starter_floating_header_css() {
+        if(!empty($this->css_js_starter_options['floating_header_css']) && !wp_is_mobile() ){
+				wp_enqueue_style('floatingheader', plugin_dir_url( __FILE__ ) . 'css/floating_header.css', array(), null );
+		}
+    }
+	
+	private function css_js_starter_header_background_color(){
+         if(isset($this->css_js_starter_options['header_background_color']) && !empty($this->css_js_starter_options['header_background_color']) ){
+             $background_color_css  = ".et_menu_container{ background:".$this->css_js_starter_options['header_background_color'].";}";
+             return $background_color_css;
+         }
+    }
+	
+	public function css_js_starter_header_background_color_css(){
+         if( !empty($this->css_js_starter_header_background_color() != null) && !wp_is_mobile() ){
+             echo '<style>';
+             if($this->css_js_starter_header_background_color() != null){
+                   echo $this->css_js_starter_header_background_color();
+             }
+             echo '</style>';
+         }
+     }
 
 
     // Add Wow.js
@@ -179,14 +203,14 @@ class Css_Js_Starter_Kit_Public {
 		}
 	}
 
-	   // Add animate.css
+	// Add Mobile Menu
     public function css_js_starter_mobile_menu() {
         if(!empty($this->css_js_starter_options['mobile_menu']) && wp_is_mobile() ){
 				wp_enqueue_script('mobilemenutouch', plugin_dir_url( __FILE__ ) . 'js/jquery.touchSwipe.min.js', array(), null );
 				wp_enqueue_style('mobilemenucss', plugin_dir_url( __FILE__ ) . 'css/mobile_menu.css', array(), null );
 				wp_enqueue_script('mobilemenujs', plugin_dir_url( __FILE__ ) . 'js/mobile_menu.js', array(), null );
         }
-    }
+    }	
 
 
 

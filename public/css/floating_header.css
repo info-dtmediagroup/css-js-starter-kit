@@ -1,0 +1,20 @@
+/* Floating Header */
+	
+.et_fixed_nav #main-header.et-fixed-header {
+	top: 40px !important;
+	box-shadow: none !important;
+	background-color: transparent;
+}
+
+.container.et_menu_container {
+	box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.1);
+}
+
+#et-top-navigation #top-menu > li:last-child,
+.logo_container {
+	padding-right: 22px;
+}
+
+#page-container {
+	padding-top: 0 !important;
+}

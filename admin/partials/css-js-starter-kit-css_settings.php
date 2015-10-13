@@ -37,4 +37,18 @@
             </label>
         </fieldset>
 		
+		<!-- Floating Header -->
+		<fieldset>
+			<legend class="screen-reader-text"><span><?php _e('Create a floating Header', $this->plugin_name);?></span></legend>
+			<label for="<?php echo $this->plugin_name;?>-floating_header_css">
+				<input type="checkbox" class="show-child-if-checked" id="<?php echo $this->plugin_name;?>-floating_header_css" name="<?php echo $this->plugin_name;?>[floating_header_css]" value="1" <?php checked($floating_header_css, 1);?>/>
+				<span><?php esc_attr_e('Activate floating Header', $this->plugin_name);?></span>
+			</label>
+            <fieldset class="<?php if( '1' != $floating_header_css ) echo 'hidden';?>" >
+                <p><?php _e('Choose the navigation bar Color', $this->plugin_name);?></p>
+                    <legend class="screen-reader-text"><span><?php _e('Choose the navigation bar Color', $this->plugin_name);?></span></legend>
+					<input type="text" class="<?php echo $this->plugin_name;?>-color-picker" id="<?php echo $this->plugin_name;?>-header_background_color" name="<?php echo $this->plugin_name;?>[header_background_color]"  value="<?php echo $header_background_color;?>"  />    
+			</fieldset>
+		</fieldset>		
+		
 </div>

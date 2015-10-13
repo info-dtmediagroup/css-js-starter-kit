@@ -35,6 +35,8 @@
 			// CSS
 			$animate_css = $options['animate_css'];
 			$fawesome_css = $options['fawesome_css'];
+			$floating_header_css = $options['floating_header_css'];
+			$header_background_color = $options['header_background_color'];
 
 			
 			// Javascript

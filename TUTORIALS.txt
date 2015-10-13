@@ -3,3 +3,5 @@ Tutorials:
 https://scotch.io/tutorials/how-to-build-a-wordpress-plugin-part-1
 
 http://www.sitepoint.com/wordpress-plugin-boilerplate-part-2-developing-a-plugin/
+
+https://github.com/GSoft-SharePoint/Dynamite/wiki/Git-step-by-step:-Part-2

@@ -151,10 +151,17 @@ class Css_Js_Starter_Kit {
 	private function define_admin_hooks() {
 
 		$plugin_admin = new Css_Js_Starter_Kit_Admin( $this->get_plugin_name(), $this->get_version() );
+		
+		// Add menu item
+		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_plugin_admin_menu' );
 
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
+		// Add Settings link to the plugin
+		$plugin_basename = plugin_basename( plugin_dir_path( __DIR__ ) . $this->plugin_name . '.php' );
+		$this->loader->add_filter( 'plugin_action_links_' . $plugin_basename, $plugin_admin, 'add_action_links' );
+		
+		$this->loader->add_action('admin_init', $plugin_admin, 'options_update');
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
-
+		
 	}
 
 	/**
@@ -167,9 +174,22 @@ class Css_Js_Starter_Kit {
 	private function define_public_hooks() {
 
 		$plugin_public = new Css_Js_Starter_Kit_Public( $this->get_plugin_name(), $this->get_version() );
+		
+		$this->loader->add_action( 'init', $plugin_public, 'css_js_starter_cleanup' );
+        $this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'css_js_starter_cdn_jquery', PHP_INT_MAX);
+		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'css_js_starter_animate_css');
+		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'css_js_starter_fawesome_css');
+		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'css_js_starter_wow_js');
+		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'css_js_starter_gsap_js');
+		$this->loader->add_action( 'after_setup_theme', $plugin_public, 'css_js_starter_remove_css_js_ver');
+		$this->loader->add_action( 'init', $plugin_public, 'css_js_starter_remove_emoji' );
+		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'css_js_starter_mobile_menu');
 
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+
+
+           //Filters
+        $this->loader->add_filter('wp_headers', $plugin_public, 'css_js_starter_remove_x_pingback');
+		        
 
 	}
 

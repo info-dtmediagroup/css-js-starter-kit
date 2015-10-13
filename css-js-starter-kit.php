@@ -9,14 +9,14 @@
  * that starts the plugin.
  *
  * @link              adesignr.com
- * @since             1.0.0
+ * @since             1.2.0
  * @package           Css_Js_Starter_Kit
  *
  * @wordpress-plugin
  * Plugin Name:       CSS & JS Starter Kit
  * Plugin URI:        adesignr.com
- * Description:       PLugin um nützliche CSS & JS Snippets einzubinden.
- * Version:           1.0.0
+ * Description:       Plugin um nützliche CSS & JS Snippets einzubinden.
+ * Version:           1.3.3
  * Author:            Alex
  * Author URI:        adesignr.com
  * License:           GPL-2.0+
@@ -56,6 +56,37 @@ register_deactivation_hook( __FILE__, 'deactivate_css_js_starter_kit' );
  * admin-specific hooks, and public-facing site hooks.
  */
 require plugin_dir_path( __FILE__ ) . 'includes/class-css-js-starter-kit.php';
+
+
+	/* Plugin Updater */
+	add_action( 'init', 'custom_github_updater' );
+	function custom_github_updater() {
+
+	include_once 'updater.php';
+
+	define( 'WP_GITHUB_FORCE_UPDATE', true );
+
+	if ( is_admin() ) { // note the use of is_admin() to double check that this is happening in the admin
+
+		$config = array(
+			'slug' => plugin_basename( __FILE__ ),
+			'proper_folder_name' => 'css-js-starter-kit',
+			'api_url' => 'https://api.github.com/repos/DTMediaGroup/css-js-starter-kit',
+			'raw_url' => 'https://raw.github.com/DTMediaGroup/css-js-starter-kit/develop',
+			'github_url' => 'https://github.com/DTMediaGroup/css-js-starter-kit/',
+			'zip_url' => 'https://github.com/DTMediaGroup/css-js-starter-kit/archive/develop.zip',
+			'sslverify' => true,
+			'requires' => '3.0',
+			'tested' => '3.3',
+			'readme' => 'README.md',
+			'access_token' => '',
+		);
+
+		new WP_GitHub_Updater( $config );
+
+	}
+
+}
 
 /**
  * Begins execution of the plugin.

@@ -11,40 +11,29 @@ jQuery(function() {
             }
         })(navigator.userAgent || navigator.vendor || window.opera);
         return check;
-    }
-	
-	//jQuery('ul#top-menu').removeClass('nav').addClass('mobile_nav_fix');
-
-	
+    }	
+	//Fix Divi Nav
+	jQuery('ul#top-menu').removeClass('nav').addClass('mobile_nav_fix');	
 	jQuery('nav#top-menu-nav').replaceWith(function(){
     return jQuery('<div id="top-menu-nav" />').append(jQuery(this).contents());
-	});
+	});	
+	//Add Burger Icon
+	jQuery('.et_menu_container').append('<ul id="navToggle" class="burger slide"><li></li><li></li><li></li></ul>');
 	
-	if( mobilecheck() ) {
-		jQuery('.et_menu_container').append('<ul id="navToggle" class="burger slide"><li></li><li></li><li></li></ul>');
-	}
-	
-
-
     var clickevent = mobilecheck() ? 'touchstart' : 'click';
-
-    var items = jQuery('#et-top-navigation');
     var content = jQuery('#et-main-area');
-
     function open() {
-        jQuery(items).removeClass('close').addClass('open');
+        jQuery('#et-top-navigation').removeClass('close').addClass('open');
 		jQuery('#et-main-area').removeClass('close').addClass('open');
 		jQuery('#navToggle').removeClass('close').addClass('open');
 		jQuery('.logo_container').removeClass('close').addClass('open');
     }
-
     function close() {
-        jQuery(items).removeClass('open').addClass('close');
+        jQuery('#et-top-navigation').removeClass('open').addClass('close');
 		 jQuery('#et-main-area').removeClass('open').addClass('close');
 		 jQuery('#navToggle').removeClass('open').addClass('close');
 		 jQuery('.logo_container').removeClass('open').addClass('close');
     }
-
     jQuery('#navToggle').on(clickevent, function(event) {
         event.stopPropagation();
         event.preventDefault();
@@ -53,29 +42,32 @@ jQuery(function() {
         } else {
             open();
         }
-    });
-	
-	if( mobilecheck() ) {	
-		jQuery('.menu-item-has-children').append('<span class="mobile-dropdown-toggle">3</span>');
-	
-		jQuery('.mobile-dropdown-toggle').on(clickevent, function(event){
-			jQuery( event.target ).closest('li').toggleClass('show-sub-menu');
-			jQuery( event.target ).closest('li').siblings().removeClass('show-sub-menu');
-		});	
-	}
-	
-	jQuery('.menu-item-has-children').append('<span class="mobile-dropdown-toggle">3</span>');
-	
-		jQuery('.mobile-dropdown-toggle').on(clickevent, function(event){
-			jQuery( event.target ).closest('li').toggleClass('show-sub-menu');
-			jQuery( event.target ).closest('li').siblings().removeClass('show-sub-menu');
-		});	
-	
+    });	
+	//Add Dropdown Toggle
+	jQuery('.menu-item-has-children').append('<span class="mobile-dropdown-toggle">3</span>');	
+	jQuery('.mobile-dropdown-toggle').on(clickevent, function(event){
+		jQuery( event.target ).closest('li').toggleClass('show-sub-menu');
+		jQuery( event.target ).closest('li').siblings().removeClass('show-sub-menu');
+	});	
 	
     content.click(function() {
         if (content.hasClass('open')) {
             close();
         }
     });
-
+	//Add Swipe Gesture	
+	jQuery("#et-top-navigation").swipe( {
+		swipeLeft:function(event, direction, distance, duration, fingerCount) {
+			close();
+		}
+	});
+	content.swipe( {
+		swipeLeft:function(event, direction, distance, duration, fingerCount) {
+			close();
+		},
+		swipeRight:function(event, direction, distance, duration, fingerCount) {
+			open();
+		}
+	});
+	
 });

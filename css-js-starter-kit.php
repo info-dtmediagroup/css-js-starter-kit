@@ -9,7 +9,7 @@
  * that starts the plugin.
  *
  * @link              adesignr.com
- * @since             1.0.0
+ * @since             1.2.0
  * @package           Css_Js_Starter_Kit
  *
  * @wordpress-plugin

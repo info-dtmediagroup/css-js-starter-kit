@@ -3,7 +3,7 @@
 #main-header {
 	box-shadow: none !important;
 	top: 40px !important;
-	background-color: transparent;
+	background-color: transparent !important;
 }	
 .et_fixed_nav #main-header.et-fixed-header {
 	top: 40px !important;

@@ -16,7 +16,7 @@
  * Plugin Name:       CSS & JS Starter Kit
  * Plugin URI:        adesignr.com
  * Description:       Plugin um nützliche CSS & JS Snippets einzubinden.
- * Version:           1.5.1
+ * Version:           1.5.2
  * Author:            Alex
  * Author URI:        adesignr.com
  * License:           GPL-2.0+

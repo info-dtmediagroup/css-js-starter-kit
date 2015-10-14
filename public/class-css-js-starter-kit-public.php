@@ -129,9 +129,17 @@ class Css_Js_Starter_Kit_Public {
         }
     }
 	
+	// Make Slider Fullscreen
+	
+	    public function css_js_starter_fullscreen_slider() {
+        if(!empty($this->css_js_starter_options['fullscreen_slider'])){
+				wp_enqueue_script( 'fullscreen_slider', plugin_dir_url( __FILE__ ) . 'js/fullscreen_slider.js', array(), null, true);
+		}
+    }
+	
 	//Remove Emoji
 	public function css_js_starter_remove_emoji() {
-        if(!empty($this->css_js_starter_options['wow_js'])){
+        if(!empty($this->css_js_starter_options['remove_emoji'])){
 			remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 			remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 			remove_action( 'wp_print_styles', 'print_emoji_styles' );

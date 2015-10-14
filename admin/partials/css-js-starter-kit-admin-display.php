@@ -45,6 +45,7 @@
 			$cdn_provider = $options['cdn_provider'];
 			$remove_emoji = $options['remove_emoji'];
 			$gsap_js = $options['gsap_js'];
+			$fullscreen_slider = $options['fullscreen_slider'];
 			
 			//Miscellaneous
 			$cleanup = $options['cleanup'];

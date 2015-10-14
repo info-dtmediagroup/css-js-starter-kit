@@ -60,4 +60,13 @@
             </label>
         </fieldset>
 		
+		<!-- Fullscreen Slider -->
+		<fieldset>
+            <legend class="screen-reader-text"><span><?php _e('Make Slider Fullscreen', $this->plugin_name);?></span></legend>
+            <label for="<?php echo $this->plugin_name; ?>-fullscreen_slider">
+                <input type="checkbox" id="<?php echo $this->plugin_name; ?>-fullscreen_slider" name="<?php echo $this->plugin_name; ?>[fullscreen_slider]" value="1" <?php checked($fullscreen_slider, 1); ?>/>
+                <span><?php esc_attr_e('Make Slider Fullscreen (you have to add the Class "fullscreenslider" in the divi editor)', $this->plugin_name); ?></span>
+            </label>
+        </fieldset>
+		
 </div>

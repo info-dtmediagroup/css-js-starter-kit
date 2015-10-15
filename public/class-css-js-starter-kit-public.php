@@ -128,14 +128,7 @@ class Css_Js_Starter_Kit_Public {
             }
         }
     }
-	
-	// Make Slider Fullscreen
-	
-	    public function css_js_starter_fullscreen_slider() {
-        if(!empty($this->css_js_starter_options['fullscreen_slider'])){
-				wp_enqueue_script( 'fullscreen_slider', plugin_dir_url( __FILE__ ) . 'js/fullscreen_slider.js', array(), null, true);
-		}
-    }
+
 	
 	//Remove Emoji
 	public function css_js_starter_remove_emoji() {
@@ -164,6 +157,15 @@ class Css_Js_Starter_Kit_Public {
     public function css_js_starter_gsap_js() {
         if(!empty($this->css_js_starter_options['gsap_js'])){
 				wp_enqueue_script( 'gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js', array(), null, true);    
+		}
+    }
+	
+		
+	// Make Slider Fullscreen
+	
+	    public function css_js_starter_fullscreen_slider() {
+        if(!empty($this->css_js_starter_options['fullscreen_slider']) && !wp_is_mobile() ){
+				wp_enqueue_script( 'fullscreen_slider', plugin_dir_url( __FILE__ ) . 'js/fullscreen_slider.js', array(), null, true);
 		}
     }
 	

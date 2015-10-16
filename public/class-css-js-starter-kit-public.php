@@ -76,6 +76,30 @@ class Css_Js_Starter_Kit_Public {
 				wp_enqueue_style('fawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', array(), null );
 		}
     }
+	
+	// Add Floating Header
+	public function css_js_starter_floating_header_css() {
+        if(!empty($this->css_js_starter_options['floating_header_css']) && !wp_is_mobile() ){
+				wp_enqueue_style('floatingheader', plugin_dir_url( __FILE__ ) . 'css/floating_header.css', array(), null );
+		}
+    }
+	
+	private function css_js_starter_header_background_color(){
+         if(isset($this->css_js_starter_options['header_background_color']) && !empty($this->css_js_starter_options['header_background_color']) ){
+             $background_color_css  = ".logo_container{ background:".$this->css_js_starter_options['header_background_color'].";} #et-top-navigation{ background:".$this->css_js_starter_options['header_background_color'].";}";
+             return $background_color_css;
+         }
+    }
+	
+	public function css_js_starter_header_background_color_css(){
+         if( !empty($this->css_js_starter_header_background_color() != null) && !wp_is_mobile() ){
+             echo '<style>';
+             if($this->css_js_starter_header_background_color() != null){
+                   echo $this->css_js_starter_header_background_color();
+             }
+             echo '</style>';
+         }
+     }
 
 
     // Add Wow.js
@@ -104,10 +128,11 @@ class Css_Js_Starter_Kit_Public {
             }
         }
     }
+
 	
 	//Remove Emoji
 	public function css_js_starter_remove_emoji() {
-        if(!empty($this->css_js_starter_options['wow_js'])){
+        if(!empty($this->css_js_starter_options['remove_emoji'])){
 			remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 			remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 			remove_action( 'wp_print_styles', 'print_emoji_styles' );
@@ -132,6 +157,15 @@ class Css_Js_Starter_Kit_Public {
     public function css_js_starter_gsap_js() {
         if(!empty($this->css_js_starter_options['gsap_js'])){
 				wp_enqueue_script( 'gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js', array(), null, true);    
+		}
+    }
+	
+		
+	// Make Slider Fullscreen
+	
+	    public function css_js_starter_fullscreen_slider() {
+        if(!empty($this->css_js_starter_options['fullscreen_slider']) && !wp_is_mobile() ){
+				wp_enqueue_script( 'fullscreen_slider', plugin_dir_url( __FILE__ ) . 'js/fullscreen_slider.js', array(), null, true);
 		}
     }
 	
@@ -179,14 +213,14 @@ class Css_Js_Starter_Kit_Public {
 		}
 	}
 
-	   // Add animate.css
+	// Add Mobile Menu
     public function css_js_starter_mobile_menu() {
-        if(!empty($this->css_js_starter_options['mobile_menu']) ){
+        if(!empty($this->css_js_starter_options['mobile_menu']) && wp_is_mobile() ){
 				wp_enqueue_script('mobilemenutouch', plugin_dir_url( __FILE__ ) . 'js/jquery.touchSwipe.min.js', array(), null );
 				wp_enqueue_style('mobilemenucss', plugin_dir_url( __FILE__ ) . 'css/mobile_menu.css', array(), null );
 				wp_enqueue_script('mobilemenujs', plugin_dir_url( __FILE__ ) . 'js/mobile_menu.js', array(), null );
         }
-    }
+    }	
 
 
 

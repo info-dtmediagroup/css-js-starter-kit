@@ -52,5 +52,10 @@
                 
 
 	});
+	
+	$(function(){
+		var colorPickerInputs = $( '.css-js-starter-kit-color-picker' );
+		 $( '.css-js-starter-kit-color-picker' ).wpColorPicker();
+	});
 
 })( jQuery );

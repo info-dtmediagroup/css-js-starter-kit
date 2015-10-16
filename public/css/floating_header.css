@@ -1,0 +1,31 @@
+/* Floating Header */
+	
+.et_fixed_nav #main-header {
+	box-shadow: none !important;
+	top: 40px !important;
+	background-color: transparent !important;
+	transition: top 0.75s;
+	-moz-transition: top 0.75s, background-color 0.4s, color 0.4s, transform 0.4s, opacity 0.4s ease-in-out !important;
+	-webkit-transition: top 0.75s, background-color 0.4s, color 0.4s, transform 0.4s, opacity 0.4s ease-in-out !important;
+}	
+.et_fixed_nav #main-header.et-fixed-header {
+	top: 0 !important;
+	box-shadow: none !important;
+	background-color: transparent;
+}
+
+.container.et_menu_container {
+	box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.1);
+}
+
+#et-top-navigation #top-menu > li:last-child {
+	padding-right: 22px;
+}
+
+.logo_container {
+	padding-left: 22px;
+}
+
+#page-container {
+	padding-top: 0 !important;
+}

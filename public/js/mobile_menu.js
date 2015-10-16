@@ -18,7 +18,7 @@ jQuery(function() {
     return jQuery('<div id="top-menu-nav" />').append(jQuery(this).contents());
 	});	
 	//Add Burger Icon
-	jQuery('.et_menu_container').append('<ul id="navToggle" class="burger slide"><li></li><li></li><li></li></ul>');
+	jQuery('.et_menu_container').append('<ul id="navToggle" class="burger slide"><li class="topbun"></li><li class="patty"></li><li class="bottombun"></li></ul>');
 	
     var clickevent = mobilecheck() ? 'touchstart' : 'click';
     var content = jQuery('#et-main-area');
@@ -27,12 +27,15 @@ jQuery(function() {
 		jQuery('#et-main-area').removeClass('close').addClass('open');
 		jQuery('#navToggle').removeClass('close').addClass('open');
 		jQuery('.logo_container').removeClass('close').addClass('open');
+		jQuery('html').addClass('scrollblocker');
     }
     function close() {
         jQuery('#et-top-navigation').removeClass('open').addClass('close');
-		 jQuery('#et-main-area').removeClass('open').addClass('close');
-		 jQuery('#navToggle').removeClass('open').addClass('close');
-		 jQuery('.logo_container').removeClass('open').addClass('close');
+		jQuery('#et-main-area').removeClass('open').addClass('close');
+		jQuery('#navToggle').removeClass('open').addClass('close');
+		jQuery('.logo_container').removeClass('open').addClass('close');
+		jQuery('html').removeClass('scrollblocker');
+
     }
     jQuery('#navToggle').on(clickevent, function(event) {
         event.stopPropagation();

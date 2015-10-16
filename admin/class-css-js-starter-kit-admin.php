@@ -90,6 +90,19 @@ class Css_Js_Starter_Kit_Admin {
 		//CSS
 		$valid['animate_css'] = (isset($input['animate_css']) && !empty($input['animate_css'])) ? 1: 0;
 		$valid['fawesome_css'] = (isset($input['fawesome_css']) && !empty($input['fawesome_css'])) ? 1 : 0;
+		$valid['floating_header_css'] = (isset($input['floating_header_css']) && !empty($input['floating_header_css'])) ? 1 : 0;
+		
+			//Header Color Picker
+			$valid['header_background_color'] = (isset($input['header_background_color']) && !empty($input['header_background_color'])) ? sanitize_text_field($input['header_background_color']) : '';
+
+                if ( !empty($valid['header_background_color']) && !preg_match( '/^#[a-f0-9]{6}$/i', $valid['header_background_color']  ) ) { // if user insert a HEX color with #
+                    add_settings_error(
+                            'header_background_color',                     // Setting title
+                            'header_background_color_texterror',            // Error ID
+                            'Please enter a valid hex value color',     // Error message
+                            'error'                         // Type of message
+                    );
+                }
 		
 		
 		//JS
@@ -98,9 +111,7 @@ class Css_Js_Starter_Kit_Admin {
 		$valid['cdn_provider'] = esc_url($input['cdn_provider']);
 		$valid['remove_emoji'] = (isset($input['remove_emoji']) && !empty($input['remove_emoji'])) ? 1 : 0;
 		$valid['gsap_js'] = (isset($input['gsap_js']) && !empty($input['gsap_js'])) ? 1 : 0;
-
-
-		
+		$valid['fullscreen_slider'] = (isset($input['fullscreen_slider']) && !empty($input['fullscreen_slider'])) ? 1 : 0;		
 		
 		//Misc
 		$valid['css_js_versions'] = (isset($input['css_js_versions']) && !empty($input['css_js_versions'])) ? 1 : 0;
@@ -117,6 +128,14 @@ class Css_Js_Starter_Kit_Admin {
      *
      * @since    1.0.0
      */
+	 
+	public function enqueue_styles() {
+		if ( 'settings_page_css-js-starter-kit' == get_current_screen() -> id ) {
+             // CSS stylesheet for Color Picker
+             wp_enqueue_style( 'wp-color-picker' );            
+             wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/css-js-starter-kit-admin.css', array( 'wp-color-picker' ), $this->version, 'all' );
+         }
+	}
     public function enqueue_scripts() {
 
         /**
@@ -132,7 +151,7 @@ class Css_Js_Starter_Kit_Admin {
          */
         if ( 'settings_page_css-js-starter-kit' == get_current_screen() -> id ) {
             wp_enqueue_media();
-            wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/css-js-starter-kit-admin.js', array( 'jquery' ), $this->version, false );
+            wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/css-js-starter-kit-admin.js', array( 'jquery', 'wp-color-picker' ), $this->version, false );
         }
 
     }

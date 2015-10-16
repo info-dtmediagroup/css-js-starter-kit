@@ -92,7 +92,7 @@ class Css_Js_Starter_Kit_Public {
     }
 	
 	public function css_js_starter_header_background_color_css(){
-         if( !empty($this->css_js_starter_header_background_color() != null) && !wp_is_mobile() ){
+         if( $this->css_js_starter_header_background_color() != null && !wp_is_mobile() ){
              echo '<style>';
              if($this->css_js_starter_header_background_color() != null){
                    echo $this->css_js_starter_header_background_color();

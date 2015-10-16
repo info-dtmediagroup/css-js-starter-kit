@@ -5,7 +5,7 @@ html, body {
     overflow-x: hidden;
 }
 
-.mobile_nav_fix li li {
+#main-header #et-top-navigation #top-menu li li {
 	position: relative;
 	line-height: 2em;
 	-webkit-box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.25) !important;
@@ -104,10 +104,16 @@ span.logo_helper {
 	display: none !important;
 }
 
+.scrollblocker {
+	height: 100%;
+	overflow: hidden;
+}
+
 .burger {
 	float: left;
 	padding: 10px 10px 10px 0;
-	top: 4px;	
+	height: 33px;
+	margin-top: 16px;
 	display: inline-block;
 }
 .burger li {
@@ -116,6 +122,43 @@ span.logo_helper {
 	background-color: #111;
 	border-radius: 3px;
 	margin: 6px 0;
+}
+
+.topbun, .bottombun {
+	transition: width 0.3s, transform 0.3s;
+	-webkit-transition: width 0.3s, transform 0.3s;
+	-moz-transition: width 0.3s, transform 0.3s;
+	-o-transition: width 0.3s, transform 0.3s;
+}
+
+.patty {
+	transition: opacity 0.2s, margin 0.2s;
+	-webkit-transition: opacity 0.2s, margin 0.2s;
+	-moz-transition: opacity 0.2s, margin 0.2s;
+	-o-transition: opacity 0.2s, margin 0.2s;
+}
+
+.burger.open .topbun {
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	width: 80%;
+}
+
+.burger.open .patty {
+	margin-left: 4px;
+	opacity: 0;
+}
+
+.burger.open .bottombun {
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	width: 80%;
 }
 
 	#et_mobile_nav_menu {

@@ -11,7 +11,9 @@ jQuery(function() {
             }
         })(navigator.userAgent || navigator.vendor || window.opera);
         return check;
-    }	
+    }
+	
+	if( mobilecheck() ) {
 	//Fix Divi Nav
 	jQuery('ul#top-menu').removeClass('nav').addClass('mobile_nav_fix');	
 	jQuery('nav#top-menu-nav').replaceWith(function(){
@@ -72,5 +74,5 @@ jQuery(function() {
 			open();
 		}
 	});
-	
+	}
 });

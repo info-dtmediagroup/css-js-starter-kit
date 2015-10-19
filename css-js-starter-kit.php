@@ -16,7 +16,7 @@
  * Plugin Name:       CSS & JS Starter Kit
  * Plugin URI:        adesignr.com
  * Description:       Plugin um nützliche CSS & JS Snippets einzubinden.
- * Version:           1.6.0
+ * Version:           1.7.0
  * Author:            Alex
  * Author URI:        adesignr.com
  * License:           GPL-2.0+
@@ -58,7 +58,7 @@ register_deactivation_hook( __FILE__, 'deactivate_css_js_starter_kit' );
 require plugin_dir_path( __FILE__ ) . 'includes/class-css-js-starter-kit.php';
 
 
-	/* Plugin Updater */
+	/* Plugin Updater old
 	add_action( 'init', 'custom_github_updater' );
 	function custom_github_updater() {
 
@@ -78,7 +78,7 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-css-js-starter-kit.php';
 			'sslverify' => true,
 			'requires' => '3.0',
 			'tested' => '3.3',
-			'readme' => 'README.md',
+			'readme' => 'README.txt',
 			'access_token' => '',
 		);
 
@@ -86,7 +86,18 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-css-js-starter-kit.php';
 
 	}
 
-}
+}*/
+
+
+/* New Updater */
+
+require 'plugin-update-checker/plugin-update-checker.php';
+$className = PucFactory::getLatestClassVersion('PucGitHubChecker');
+$myUpdateChecker = new $className(
+    'https://github.com/DTMediaGroup/css-js-starter-kit/',
+    __FILE__,
+    'develop'
+);
 
 /**
  * Begins execution of the plugin.

@@ -5,6 +5,10 @@ html, body {
     overflow-x: hidden;
 }
 
+#main-header #et-top-navigation #top-menu {
+	width: 100% !important;
+}
+
 #main-header #et-top-navigation #top-menu li li {
 	position: relative;
 	line-height: 2em;
@@ -18,19 +22,20 @@ html, body {
 	left: 0;
 	top: 0;
 	width: 300px !important;
-	
+	padding: 0 !important;
 	background-color: #2a2c31;
 	overflow-y: scroll;
 	-webkit-box-shadow: inset 2px 0px 2px 1px rgba(0, 0, 0, 0.3);
 	-moz-box-shadow: inset 2px 0px 2px 1px rgba(0, 0, 0, 0.3);
 	box-shadow: inset 2px 0px 2px 1px rgba(0, 0, 0, 0.3);
+	height: 100% !important;
 }
 
 #main-header #et-top-navigation #top-menu li {
 	position: relative;
 	display: block;
 	text-align: left;
-	line-height: 70px;
+	line-height: 1em;
 	padding-right: 0;
 	-webkit-box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.3);
 	-moz-box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.3);
@@ -97,11 +102,12 @@ html, body {
 .logo_container {
 	width: 75% !important;
 	float:right;
+	position: inherit !important;
 	padding: 12px 0 !important;
 }
 
 .logo_container img {
-	float: right: !important;
+	float: right !important;
 }
 
 span.logo_helper {

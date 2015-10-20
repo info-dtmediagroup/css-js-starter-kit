@@ -15,7 +15,7 @@ jQuery(function() {
 	
 	if( mobilecheck() ) {
 	//Fix Divi Nav
-	jQuery('ul#top-menu').removeClass('nav').addClass('mobile_nav_fix');	
+	jQuery('ul#top-menu').removeClass('nav');	
 	jQuery('nav#top-menu-nav').replaceWith(function(){
     return jQuery('<div id="top-menu-nav" />').append(jQuery(this).contents());
 	});	

@@ -12,9 +12,10 @@ html, body {
 #main-header #et-top-navigation #top-menu li li {
 	position: relative;
 	line-height: 2em;
-	-webkit-box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.25) !important;
+	/*-webkit-box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.25) !important;
 	-moz-box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.25) !important;
-	box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.25) !important;
+	box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.25) !important;*/
+	border-top: 1px solid rgba(0,0,0,0.4)
 }
 
 #main-header #et-top-navigation {
@@ -25,9 +26,9 @@ html, body {
 	padding: 0 !important;
 	background-color: #2a2c31;
 	overflow-y: scroll;
-	-webkit-box-shadow: inset 2px 0px 2px 1px rgba(0, 0, 0, 0.3);
-	-moz-box-shadow: inset 2px 0px 2px 1px rgba(0, 0, 0, 0.3);
-	box-shadow: inset 2px 0px 2px 1px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: inset -1px 0px 3px 0px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: inset -1px 0px 3px 0px rgba(0, 0, 0, 0.5);
+	box-shadow: inset -1px 0px 3px 0px rgba(0, 0, 0, 0.5);
 	height: 100% !important;
 }
 
@@ -37,9 +38,10 @@ html, body {
 	text-align: left;
 	line-height: 1em;
 	padding-right: 0;
-	-webkit-box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.3);
+	/*-webkit-box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.3);
 	-moz-box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.3);
-	box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.3);
+	box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.3);*/
+	border-bottom: 1px solid rgba(0,0,0,0.3);
 }
 
 #main-header #et-top-navigation #top-menu li a {
@@ -82,10 +84,11 @@ html, body {
 	font-weight: 800;
 	color: #fff;
 	padding: 25px;
-	box-shadow: -1px 0px 0px 0px rgba(0, 0, 0, 0.4) !important;
+	/*box-shadow: -1px 0px 0px 0px rgba(0, 0, 0, 0.4) !important;
 	-webkit-box-shadow: -1px 0px 0px 0px rgba(0, 0, 0, 0.4) !important;
-	-moz-box-shadow: -1px 0px 0px 0px rgba(0, 0, 0, 0.4) !important;
+	-moz-box-shadow: -1px 0px 0px 0px rgba(0, 0, 0, 0.4) !important;*/
 	line-height: 1em;
+	border-left: 1px solid rgba(0,0,0,0.4);
 	
 	
 	/*Block Text Selection */

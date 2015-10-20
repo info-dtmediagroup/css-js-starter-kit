@@ -25,6 +25,9 @@ Die Features können nach Bedarf erweitert werden. Updates laufen über ein Gith
 = 1.0 =
 * Basic Functionality everything else is on github.
 
+= 1.7.4 =
+* Perfomance improvements
+
 == Upgrade Notice ==
 
 = 1.4.0 =

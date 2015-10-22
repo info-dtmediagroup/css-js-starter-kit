@@ -84,6 +84,17 @@ span.logo_helper {
 	width: 80%;
 }
 
+/* Safari Fix */
+
+.safari.et_header_style_split #et-top-navigation {
+	-webkit-transform: translate3d( -300px, 0, 0) !important;
+}
+
+.safari.et_header_style_split #et-top-navigation.open {
+	-webkit-transform: translate3d(0,0,0) !important;
+}
+
+ 
 #main-header #et-top-navigation {
 	position: fixed !important;
 	left: 0;

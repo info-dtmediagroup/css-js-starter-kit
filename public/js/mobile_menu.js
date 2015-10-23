@@ -17,7 +17,7 @@ jQuery(function() {
 	//Fix Divi Nav
 	jQuery('ul#top-menu').removeClass('nav');	
 	jQuery('nav#top-menu-nav').replaceWith(function(){
-    return jQuery('<div id="top-menu-nav" />').append(jQuery(this).contents());
+		return jQuery('<div id="top-menu-nav" />').append(jQuery(this).contents());
 	});	
 	//Add Burger Icon
 	jQuery('.et_menu_container').append('<ul id="navToggle" class="burger slide"><li class="topbun"></li><li class="patty"></li><li class="bottombun"></li></ul>');

@@ -13,12 +13,16 @@ jQuery(function() {
         return check;
     }
 	
-	if( mobilecheck() ) {
+	if( mobilecheck() || jQuery(window).width() > 980 ) {
 	//Fix Divi Nav
 	jQuery('ul#top-menu').removeClass('nav');	
 	jQuery('nav#top-menu-nav').replaceWith(function(){
 		return jQuery('<div id="top-menu-nav" />').append(jQuery(this).contents());
 	});	
+	//Remove Mega Menu
+	jQuery('.mega-menu').removeClass('mega-menu');
+	jQuery('.cs-mega-menu').removeClass('cs-mega-menu');
+	
 	//Add Burger Icon
 	jQuery('.et_menu_container').append('<ul id="navToggle" class="burger slide"><li class="topbun"></li><li class="patty"></li><li class="bottombun"></li></ul>');
 	

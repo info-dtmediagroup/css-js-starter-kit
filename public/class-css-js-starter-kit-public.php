@@ -202,7 +202,7 @@ class Css_Js_Starter_Kit_Public {
 	
 	
 	// Remove  CSS and JS query strings versions
-	public function css_js_starter_remove_css_js_ver( ) {
+	public function css_js_starter_remove_css_js_ver() {
 		if(!empty($this->css_js_starter_options['css_js_versions'])){
 			function css_js_starter_remove_css_js_ver_filter($src ){
 				 if( strpos( $src, '?ver=' ) ) $src = remove_query_arg( 'ver', $src );
@@ -220,8 +220,10 @@ class Css_Js_Starter_Kit_Public {
 				wp_enqueue_style('mobilemenucss', plugin_dir_url( __FILE__ ) . 'css/mobile_menu.css', array(), null );
 				wp_enqueue_script('mobilemenujs', plugin_dir_url( __FILE__ ) . 'js/mobile_menu.js', array(), null, true);
         }
-    }	
-
-
-
+    }
+	
+	//Widget Stylesheet
+	public function css_js_starter_widgets_css() {
+		wp_enqueue_style('cjsk-widget', plugin_dir_url( __FILE__ ) . 'css/widget.css', array(), null );
+	}
 }

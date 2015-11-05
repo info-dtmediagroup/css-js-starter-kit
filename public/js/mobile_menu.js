@@ -13,7 +13,12 @@ jQuery(function() {
         return check;
     }
 	
-	if( mobilecheck() || jQuery(window).width() > 980 ) {
+	jQuery('.mega-menu').addClass('mega-fallback');
+	jQuery('.cs-mega-menu').addClass('cs-mega-fallback');
+	
+	function mobile_menu() {
+	if( mobilecheck() || jQuery(window).width() < 980 ) {
+	
 	//Fix Divi Nav
 	jQuery('ul#top-menu').removeClass('nav');	
 	jQuery('nav#top-menu-nav').replaceWith(function(){
@@ -43,21 +48,38 @@ jQuery(function() {
 		jQuery('html').removeClass('scrollblocker');
 
     }
-    jQuery('#navToggle').on(clickevent, function(event) {
-        event.stopPropagation();
-        event.preventDefault();
-        if (content.hasClass('open')) {
-            close();
-        } else {
-            open();
-        }
-    });	
+	if( mobilecheck() ) {
+		jQuery('#navToggle').on(clickevent, function(event) {
+			event.stopPropagation();
+			event.preventDefault();
+			if (content.hasClass('open')) {
+				close();
+			} else {
+				open();
+			}
+		});	
+	} else {
+		jQuery('#navToggle').click(function(){
+			if(content.hasClass('open')) {
+				close();
+			} else {
+				open();
+			}
+		});
+	}
 	//Add Dropdown Toggle
 	jQuery('.menu-item-has-children').append('<span class="mobile-dropdown-toggle">3</span>');	
-	jQuery('.mobile-dropdown-toggle').on(clickevent, function(event){
-		jQuery( event.target ).closest('li').toggleClass('show-sub-menu');
-		jQuery( event.target ).closest('li').siblings().removeClass('show-sub-menu');
-	});	
+	if( mobilecheck() ) {
+		jQuery('.mobile-dropdown-toggle').on(clickevent, function(event){
+			jQuery( event.target ).closest('li').toggleClass('show-sub-menu');
+			jQuery( event.target ).closest('li').siblings().removeClass('show-sub-menu');
+		});
+	} else {
+		jQuery('.mobile-dropdown-toggle').click(function(event){
+			jQuery( event.target ).closest('li').toggleClass('show-sub-menu');
+			jQuery( event.target ).closest('li').siblings().removeClass('show-sub-menu');
+		})
+	}
 	
     content.click(function() {
         if (content.hasClass('open')) {
@@ -78,5 +100,36 @@ jQuery(function() {
 			open();
 		}
 	});
-	}
+	}}
+	mobile_menu();
+	
+	jQuery(window).resize( function() {
+		if( jQuery(window).width() < 980 ) {
+			if ( jQuery( "#navToggle" ).length) {			
+			}else{
+				mobile_menu();
+			}
+			jQuery(".mobile-dropdown-toggle").show().css('z-index', '999');
+			jQuery(".mega-menu").removeClass('mega-menu');
+			jQuery(".cs-mega-menu").removeClass('cs-mega-menu');
+			jQuery('ul#top-menu').removeClass('nav');	
+			jQuery('nav#top-menu-nav').replaceWith(function(){
+				return jQuery('<div id="top-menu-nav" />').append(jQuery(this).contents());
+			});	
+
+		}else{
+			//Fix Divi Nav
+			jQuery('ul#top-menu').addClass('nav');	
+			jQuery('#top-menu-nav').replaceWith(function(){
+			return jQuery('<nav id="top-menu-nav" />').append(jQuery(this).contents());
+			});	
+			//Add Back Mega Menu
+			jQuery(".mobile-dropdown-toggle").hide();
+			
+			jQuery('.mega-fallback').addClass('mega-menu');
+			jQuery('.cs-mega-fallback').addClass('cs-mega-menu');
+			
+		}
+	});
+	
 });

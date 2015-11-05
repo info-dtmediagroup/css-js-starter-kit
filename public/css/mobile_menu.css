@@ -1,4 +1,4 @@
-@media only screen and (max-width: 980px) {
+@media all and (max-width: 980px) {
 
 html, body {
     max-width: 100%;
@@ -184,7 +184,7 @@ span.logo_helper {
 	-moz-box-shadow: -1px 0px 0px 0px rgba(0, 0, 0, 0.4) !important;*/
 	line-height: 1em;
 	border-left: 1px solid rgba(0,0,0,0.4);
-	
+	cursor: pointer;
 	
 	/*Block Text Selection */
 	-webkit-user-select: none;  /* Chrome all / Safari all */

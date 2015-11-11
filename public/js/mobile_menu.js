@@ -100,6 +100,7 @@ jQuery(function() {
 			open();
 		}
 	});
+	
 	}}
 	mobile_menu();
 	

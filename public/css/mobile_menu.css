@@ -47,6 +47,12 @@ span.logo_helper {
 	margin: 6px 0;
 }
 
+.burger.open li {
+	position: absolute;
+	width: 40px;
+	bottom: -25%;
+}
+
 .topbun, .bottombun {
 	transition: width 0.2, transform 0.2s;
 	-webkit-transition: width 0.2s, transform 0.2s;
@@ -67,7 +73,6 @@ span.logo_helper {
 	-moz-transform: rotate(-45deg);
 	-ms-transform: rotate(-45deg);
 	-o-transform: rotate(-45deg);
-	width: 80%;
 }
 
 .burger.open .patty {
@@ -81,7 +86,6 @@ span.logo_helper {
 	-moz-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
 	-o-transform: rotate(45deg);
-	width: 80%;
 }
 
 /* Safari Fix */
@@ -156,6 +160,8 @@ span.logo_helper {
 	width: auto ;
 	display: none;
 	padding: 0;
+	box-shadow: inset -1px 0px 3px 0px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: inset -1px 0px 3px 0px rgba(0, 0, 0, 0.5);
 }
 
 #top-menu li li a {
@@ -191,6 +197,9 @@ span.logo_helper {
 	-moz-user-select: none;     /* Firefox all */
 	-ms-user-select: none;      /* IE 10+ */
 	user-select: none;  
+	
+	/* Remove Blue Tap bg */
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .scrollblocker {

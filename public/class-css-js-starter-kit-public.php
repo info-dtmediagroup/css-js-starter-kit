@@ -222,8 +222,20 @@ class Css_Js_Starter_Kit_Public {
         }
     }
 	
+	//Stupid Dropdown Fix
+	public function css_js_starter_dropdown_fix() {
+		if(!empty($this->css_js_starter_options['mobile_menu']) ){
+				wp_enqueue_script('mobilemenudropdown', plugin_dir_url( __FILE__ ) . 'js/dropdown_fix.js', array(), null, true);
+        }
+	}
+	
 	//Widget Stylesheet
 	public function css_js_starter_widgets_css() {
 		wp_enqueue_style('cjsk-widget', plugin_dir_url( __FILE__ ) . 'css/widget.css', array(), null );
+	}
+	
+	//Remove the fucking 300ms Tap delay
+	public function css_js_starter_fastclick() {
+		wp_enqueue_script('fastclickjs', plugin_dir_url( __FILE__ ) . 'js/fastclick.js', array(), null, true);
 	}
 }

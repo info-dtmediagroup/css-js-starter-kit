@@ -191,11 +191,12 @@ class Css_Js_Starter_Kit {
 		$this->loader->add_action( 'after_setup_theme', $plugin_public, 'css_js_starter_remove_css_js_ver');
 		$this->loader->add_action( 'init', $plugin_public, 'css_js_starter_remove_emoji' );
 		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'css_js_starter_mobile_menu');
+		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'css_js_starter_dropdown_fix', 99);
 		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'css_js_starter_floating_header_css');
 		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'css_js_starter_header_background_color_css');
 		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'css_js_starter_fullscreen_slider');
 		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'css_js_starter_widgets_css');
-
+		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'css_js_starter_fastclick');
 
 
         //Filters

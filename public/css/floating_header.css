@@ -1,5 +1,5 @@
 /* Floating Header */
-	
+@media only screen and (min-width: 970px) {	
 .et_fixed_nav #main-header {
 	box-shadow: none !important;
 	top: 40px !important;
@@ -28,4 +28,5 @@
 
 #page-container {
 	padding-top: 0 !important;
+}
 }

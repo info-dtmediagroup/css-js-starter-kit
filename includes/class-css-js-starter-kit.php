@@ -118,11 +118,6 @@ class Css_Js_Starter_Kit {
 		 * side of the site.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-css-js-starter-kit-public.php';
-		
-		/**
-		 * Widget Class
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-css-js-starter-kit-widgets.php';
 
 
 		$this->loader = new Css_Js_Starter_Kit_Loader();
@@ -195,7 +190,6 @@ class Css_Js_Starter_Kit {
 		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'css_js_starter_floating_header_css');
 		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'css_js_starter_header_background_color_css');
 		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'css_js_starter_fullscreen_slider');
-		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'css_js_starter_widgets_css');
 		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'css_js_starter_fastclick');
 
 

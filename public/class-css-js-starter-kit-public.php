@@ -229,11 +229,6 @@ class Css_Js_Starter_Kit_Public {
         }
 	}
 	
-	//Widget Stylesheet
-	public function css_js_starter_widgets_css() {
-		wp_enqueue_style('cjsk-widget', plugin_dir_url( __FILE__ ) . 'css/widget.css', array(), null );
-	}
-	
 	//Remove the fucking 300ms Tap delay
 	public function css_js_starter_fastclick() {
 		wp_enqueue_script('fastclickjs', plugin_dir_url( __FILE__ ) . 'js/fastclick.js', array(), null, true);

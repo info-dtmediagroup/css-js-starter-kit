@@ -1,10 +1,10 @@
-=== Plugin Name ===
+﻿=== Plugin Name ===
 Contributors: (this should be a list of wordpress.org userid's)
 Donate link: adesignr.com
 Tags: css, js, javascript, snippets
 Requires at least: 3.0.1
-Tested up to: 4.3
-Stable tag: 4.3
+Tested up to: 4.4.1
+Stable tag: 4.4.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,7 +28,13 @@ Die Features können nach Bedarf erweitert werden. Updates laufen über ein Gith
 = 1.7.4 =
 * Perfomance improvements
 
+= 1.9.0 =
+* Mailchimp Widget Removed
+
 == Upgrade Notice ==
 
 = 1.4.0 =
 Auto updates wurden eingeführt.
+
+= 1.9.0 =
+Widget wurde entfernt

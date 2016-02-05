@@ -88,16 +88,29 @@ jQuery(function() {
     });
 	//Add Swipe Gesture	
 	jQuery("#et-top-navigation").swipe( {
-		swipeLeft:function(event, direction, distance, duration, fingerCount) {
+		/*swipeLeft:function(event, direction, distance, duration, fingerCount, fingerData) {
 			close();
+		}*/
+		swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+			if( direction == "left" ) {
+					close();
+			}
 		}
 	});
 	content.swipe( {
-		swipeLeft:function(event, direction, distance, duration, fingerCount) {
+		/*swipeLeft:function(event, direction, distance, duration, fingerCount, fingerData) {
 			close();
 		},
-		swipeRight:function(event, direction, distance, duration, fingerCount) {
+		swipeRight:function(event, direction, distance, duration, fingerCount, fingerData) {
 			open();
+		}*/
+		
+		swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+			if( direction == "left" ) {
+				close();
+			} else if( direction == "right" ) {
+				open();
+			}
 		}
 	});
 	

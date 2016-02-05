@@ -90,13 +90,16 @@ span.logo_helper {
 
 /* Safari Fix */
 
-.safari.et_header_style_split #et-top-navigation {
-	-webkit-transform: translate3d( -300px, 0, 0) !important;
+.safari #main-header #et-top-navigation, .safari #main-header #et-top-navigation.close {
+	-webkit-transform: translate3d(0,0,0);
+	-webkit-backface-visibility: hidden;
+	left: -300px;
 }
 
-.safari.et_header_style_split #et-top-navigation.open {
-	-webkit-transform: translate3d(0,0,0) !important;
-}
+.safari #main-header #et-top-navigation.open {
+
+	left: 0;
+} 
 
  
 #main-header #et-top-navigation {
@@ -233,7 +236,7 @@ span.logo_helper {
 }
 @-webkit-keyframes slideIn {
 	0%       {
-				-webkit-transform: translate3d(-300px,0,0));}
+				-webkit-transform: translate3d(-300px,0,0);}
 	100%  {
 				-webkit-transform: translate3d(0,0,0);}
 }

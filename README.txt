@@ -31,6 +31,9 @@ Die Features können nach Bedarf erweitert werden. Updates laufen über ein Gith
 = 1.9.0 =
 * Mailchimp Widget Removed
 
+= 1.9.2 =
+* Fixed Mobile Menu on Safari
+
 == Upgrade Notice ==
 
 = 1.4.0 =

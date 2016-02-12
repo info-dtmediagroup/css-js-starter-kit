@@ -69,4 +69,13 @@
             </label>
         </fieldset>
 		
+		<!-- Fullscreen Slider -->
+		<fieldset>
+            <legend class="screen-reader-text"><span><?php _e('Fix Fullwidth Text/Image', $this->plugin_name);?></span></legend>
+            <label for="<?php echo $this->plugin_name; ?>-fullscreen_slider">
+                <input type="checkbox" id="<?php echo $this->plugin_name; ?>-fullscreen_slider" name="<?php echo $this->plugin_name; ?>[fullscreen_slider]" value="1" <?php checked($fullscreen_slider, 1); ?>/>
+                <span><?php esc_attr_e('Fixes the Images on Mobile and the Image height on Desktop when using a text module and an image next to each other (needs class fullwidth)', $this->plugin_name); ?></span>
+            </label>
+        </fieldset>
+		
 </div>

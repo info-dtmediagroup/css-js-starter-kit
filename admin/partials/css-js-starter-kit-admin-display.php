@@ -46,6 +46,7 @@
 			$remove_emoji = $options['remove_emoji'];
 			$gsap_js = $options['gsap_js'];
 			$fullscreen_slider = $options['fullscreen_slider'];
+			$fwimage = $options['fwimage'];
 			
 			//Miscellaneous
 			$cleanup = $options['cleanup'];

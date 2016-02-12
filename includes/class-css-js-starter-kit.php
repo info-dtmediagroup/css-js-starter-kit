@@ -191,7 +191,7 @@ class Css_Js_Starter_Kit {
 		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'css_js_starter_header_background_color_css');
 		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'css_js_starter_fullscreen_slider');
 		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'css_js_starter_fastclick');
-
+		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'css_js_starter_fwimage');
 
         //Filters
         $this->loader->add_filter('wp_headers', $plugin_public, 'css_js_starter_remove_x_pingback');

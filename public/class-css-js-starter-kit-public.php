@@ -239,4 +239,9 @@ class Css_Js_Starter_Kit_Public {
 		$svg_mime['svg'] = 'image/svg+xml';
 		return $svg_mime;
 	}
+	
+	//Fix Fullwidth Images
+	public function css_js_starter_fwimage() {
+		wp_enqueue_script('fwimages', plugin_dir_url( __FILE__ ) . 'js/fw-images.js', array(), null, true);
+	}
 }

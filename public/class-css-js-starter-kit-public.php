@@ -216,7 +216,7 @@ class Css_Js_Starter_Kit_Public {
 	// Add Mobile Menu
     public function css_js_starter_mobile_menu() {
         if(!empty($this->css_js_starter_options['mobile_menu']) ){
-				wp_enqueue_script('mobilemenutouch', plugin_dir_url( __FILE__ ) . 'js/jquery.touchSwipe.min.js', array(), null, true);
+				wp_enqueue_script('mobilemenutouch', plugin_dir_url( __FILE__ ) . 'js/hammer.js', array(), null, true);
 				wp_enqueue_style('mobilemenucss', plugin_dir_url( __FILE__ ) . 'css/mobile_menu.css', array(), null );
 				wp_enqueue_script('mobilemenujs', plugin_dir_url( __FILE__ ) . 'js/mobile_menu.js', array(), null, true);
         }

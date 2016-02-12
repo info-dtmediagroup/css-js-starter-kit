@@ -233,4 +233,10 @@ class Css_Js_Starter_Kit_Public {
 	public function css_js_starter_fastclick() {
 		wp_enqueue_script('fastclickjs', plugin_dir_url( __FILE__ ) . 'js/fastclick.js', array(), null, true);
 	}
+	
+	//Add SVG Support
+	public function css_js_starter_svg_support() {
+		$svg_mime['svg'] = 'image/svg+xml';
+		return $svg_mime;
+	}
 }

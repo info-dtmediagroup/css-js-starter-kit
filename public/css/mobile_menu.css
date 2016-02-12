@@ -87,20 +87,6 @@ span.logo_helper {
 	-ms-transform: rotate(45deg);
 	-o-transform: rotate(45deg);
 }
-
-/* Safari Fix */
-
-.safari #main-header #et-top-navigation, .safari #main-header #et-top-navigation.close {
-	-webkit-transform: translate3d(0,0,0);
-	-webkit-backface-visibility: hidden;
-	left: -300px;
-}
-
-.safari #main-header #et-top-navigation.open {
-
-	left: 0;
-} 
-
  
 #main-header #et-top-navigation {
 	position: fixed !important;
@@ -126,9 +112,6 @@ span.logo_helper {
 	text-align: left;
 	line-height: 1em;
 	padding-right: 0;
-	/*-webkit-box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.3);
-	-moz-box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.3);
-	box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.3);*/
 	border-bottom: 1px solid rgba(0,0,0,0.3);
 }
 
@@ -188,9 +171,6 @@ span.logo_helper {
 	font-weight: 800;
 	color: #fff;
 	padding: 25px;
-	/*box-shadow: -1px 0px 0px 0px rgba(0, 0, 0, 0.4) !important;
-	-webkit-box-shadow: -1px 0px 0px 0px rgba(0, 0, 0, 0.4) !important;
-	-moz-box-shadow: -1px 0px 0px 0px rgba(0, 0, 0, 0.4) !important;*/
 	line-height: 1em;
 	border-left: 1px solid rgba(0,0,0,0.4);
 	cursor: pointer;
@@ -219,20 +199,17 @@ span.logo_helper {
 	-webkit-transform: translate3d(-300px,0,0);
 	-moz-transform: translate3d(-300px,0,0);
 	transform: translate3d(-300px,0,0);
+
 }
 
 /*Nav Expanding Open Effect*/
 #et-top-navigation.open {
-	
-
-	-webkit-transform: translate3d(0,0,0);
 	-webkit-animation: slideIn .35s ease-in-out;
-	
-	-moz-transform: translate3d(0,0,0);
 	-moz-animation: slideIn .35s ease-in-out;
-	
-	transform: translate3d(0,0,0);
 	animation: slideIn .35s ease-in-out;
+	
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
 }
 @-webkit-keyframes slideIn {
 	0%       {
@@ -255,16 +232,12 @@ span.logo_helper {
 
 /*Nav Shrinking Closed Effect*/
 #et-top-navigation.close {
-
-	
-	-webkit-transform: translate3d(-300px,0,0);
 	-webkit-animation: slideOut .3s ease-in-out;
-	
-	-moz-transform: translate3d(-300px,0,0);
 	-moz-animation: slideOut .3s ease-in-out;
-	
-	transform: translate3d(-300px,0,0);
 	animation: slideOut .3s ease-in-out;
+	
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
 }
 @-webkit-keyframes slideOut {
 	0%      {
@@ -300,18 +273,13 @@ span.logo_helper {
 
 /*Content Sliding Open Effect*/
 /*header.open*/
-.logo_container.open,
-#navToggle.open,
-#et-main-area.open 
-{   
-	-webkit-transform: translate3d(300px,0,0);
+.logo_container.open, #navToggle.open, #et-main-area.open {   
 	-webkit-animation: open .35s ease-in-out;
-	
-	-moz-transform: translate3d(300px,0,0);
 	-moz-animation: open .35s ease-in-out;
-	
-	transform: translate3d(300px,0,0);
 	animation: open .35s ease-in-out;
+	
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
 }
 @-webkit-keyframes open {
 	0%      {-webkit-transform: translate3d(0,0,0);}
@@ -328,18 +296,13 @@ span.logo_helper {
 
 /*Content Sliding Closed Effect*/
 /*header.close,*/
-.logo_container.close,
-#navToggle.close,
-#et-main-area.close 
-{
-	-webkit-transform: translate3d(0,0,0);
+.logo_container.close, #navToggle.close, #et-main-area.close {
 	-webkit-animation: close .3s ease-in-out;
-	
-	-moz-transform: translate3d(0,0,0);
 	-moz-animation: close .3s ease-in-out;
-	
-	transform: translate3d(0,0,0);
 	animation: close .3s ease-in-out;
+	
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
 }
 @-webkit-keyframes close {
 	0%      {-webkit-transform: translate3d(300px,0,0);}

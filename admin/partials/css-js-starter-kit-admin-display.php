@@ -51,11 +51,8 @@
 			$cleanup = $options['cleanup'];
 			$css_js_versions = $options['css_js_versions'];
 			$mobile_menu = $options['mobile_menu'];
-			
-			
-			
+			$svg_support = $options['svg_support'];
 
-		
 			settings_fields($this->plugin_name);
 			do_settings_sections($this->plugin_name);
 			

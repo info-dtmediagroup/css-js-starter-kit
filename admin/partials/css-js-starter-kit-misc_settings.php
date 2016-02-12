@@ -44,5 +44,13 @@
 			<span><?php esc_attr_e('Add a mobile Slideout Menu (only works with Divi)', $this->plugin_name);?></span>
 		</label>
 	</fieldset>
+	
+	<fieldset>
+		<legend class="screen-reader-text"><span><?php _e('Add SVG Support', $this->plugin_name);?></span></legend>
+		<label for="<?php echo $this->plugin_name;?>-svg_support">
+			<input type="checkbox" id="<?php echo $this->plugin_name;?>-svg_support" name="<?php echo $this->plugin_name;?>[svg_support]" value="1" <?php checked($svg_support, 1);?>/>
+			<span><?php esc_attr_e('Add SVG Support to Media Uploader', $this->plugin_name);?></span>
+		</label>
+	</fieldset>
 		
 </div>

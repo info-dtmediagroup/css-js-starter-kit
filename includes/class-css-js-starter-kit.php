@@ -195,6 +195,7 @@ class Css_Js_Starter_Kit {
 
         //Filters
         $this->loader->add_filter('wp_headers', $plugin_public, 'css_js_starter_remove_x_pingback');
+		$this->loader->add_filter('upload_mimes', $plugin_public, 'css_js_starter_svg_support');
 		        
 
 	}
